@@ -9,7 +9,7 @@ class SiteTestCase(unittest.TestCase):
     def setUp(self):
         # self.driver = webdriver.Firefox()
 
-        driverPath = os.path.dirname(os.path.abspath(__file__)) + '/driver/phantomjs_linux64'
+        driverPath = os.path.dirname(os.path.abspath(__file__)) + '/driver/phantomjs_mac'
         self.driver = webdriver.PhantomJS(driverPath)
 
     def tearDown(self):
@@ -20,6 +20,10 @@ class SiteTestCase(unittest.TestCase):
 
         self.assertTrue(self.existElement('input#email'))
         self.assertTrue(self.existElement('input#pass'))
+
+    def test_fail(self):
+        self.assertTrue(False)
+
 
     def existElement(self, cssSelector):
         try:
