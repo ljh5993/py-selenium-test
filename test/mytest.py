@@ -1,5 +1,6 @@
 __author__ = 'jihoon'
 
+import os
 import unittest
 from selenium import webdriver
 
@@ -7,7 +8,10 @@ from selenium import webdriver
 class SiteTestCase(unittest.TestCase):
     def setUp(self):
         # self.driver = webdriver.Firefox()
-        self.driver = webdriver.PhantomJS('driver/phantomjs', service_log_path='driver/log.txt')
+
+        rootPath = os.path.dirname(os.path.abspath(__file__))
+        self.driver = webdriver.PhantomJS(rootPath + '/driver/phantomjs',
+                                          service_log_path=rootPath + '/driver/log.txt')
 
     def tearDown(self):
         self.driver.quit()
