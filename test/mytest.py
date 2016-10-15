@@ -9,9 +9,9 @@ class SiteTestCase(unittest.TestCase):
     def setUp(self):
         # self.driver = webdriver.Firefox()
 
-        rootPath = os.path.dirname(os.path.abspath(__file__))
-        self.driver = webdriver.PhantomJS(rootPath + '/driver/phantomjs',
-                                          service_log_path=rootPath + '/driver/log.txt')
+        driverPath = os.path.dirname(os.path.abspath(__file__)) + '/driver/phantomjs'
+        print 'Driver path : ' + driverPath
+        self.driver = webdriver.PhantomJS(driverPath)
 
     def tearDown(self):
         self.driver.quit()
