@@ -15,22 +15,20 @@ class SiteTestCase(unittest.TestCase):
     def tearDown(self):
         self.driver.quit()
 
-    def test_loginPage(self):
-        self.driver.get('https://facebook.com')
-
-        self.assertTrue(self.existElement('input#email'))
-        self.assertTrue(self.existElement('input#pass'))
-
-    def test_fail(self):
-        self.assertTrue(False)
-
-
     def existElement(self, cssSelector):
         try:
             self.driver.find_element_by_css_selector(cssSelector)
             return True
         except:
             return False
+
+
+    def test_loginPage(self):
+
+        self.driver.get('https://facebook.com')
+
+        self.assertTrue(self.existElement('input#email'))
+        self.assertTrue(self.existElement('input#pass'))
 
 
 if __name__ == '__main__':
