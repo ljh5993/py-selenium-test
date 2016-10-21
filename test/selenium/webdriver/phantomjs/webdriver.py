@@ -30,7 +30,7 @@ class WebDriver(RemoteWebDriver):
     https://github.com/detro/ghostdriver
     """
 
-    def __init__(self, executable_path="phantomjs_darwin",
+    def __init__(self, executable_path="phantomjs_mac",
                  port=0, desired_capabilities=DesiredCapabilities.PHANTOMJS,
                  service_args=None, service_log_path=None):
         """
@@ -44,7 +44,7 @@ class WebDriver(RemoteWebDriver):
          - desired_capabilities: Dictionary object with non-browser specific
            capabilities only, such as "proxy" or "loggingPref".
          - service_args : A List of command line arguments to pass to PhantomJS
-         - service_log_path: Path for phantomjs_darwin service to log to.
+         - service_log_path: Path for phantomjs_mac service to log to.
         """
         self.service = Service(executable_path, port=port,
             service_args=service_args, log_path=service_log_path)

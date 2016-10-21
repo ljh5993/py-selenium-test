@@ -10,11 +10,17 @@ class SiteTestCase(unittest.TestCase):
     def setUp(self):
         # self.driver = webdriver.Firefox()
 
-        driverPath = os.path.dirname(os.path.abspath(__file__)) + '/driver/phantomjs_' + sys.platform
+        if sys.platform == 'darwin':
+            driverPath = os.path.dirname(os.path.abspath(__file__)) + '/driver/phantomjs_mac'
+        else:
+            driverPath = os.path.dirname(os.path.abspath(__file__)) + '/driver/phantomjs_linux'
+
         self.driver = webdriver.PhantomJS(driverPath)
+
 
     def tearDown(self):
         self.driver.quit()
+
 
     def existElement(self, cssSelector):
         try:
