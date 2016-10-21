@@ -1,6 +1,7 @@
 __author__ = 'jihoon'
 
 import os
+import sys
 import unittest
 from selenium import webdriver
 
@@ -9,7 +10,7 @@ class SiteTestCase(unittest.TestCase):
     def setUp(self):
         # self.driver = webdriver.Firefox()
 
-        driverPath = os.path.dirname(os.path.abspath(__file__)) + '/driver/phantomjs_mac'
+        driverPath = os.path.dirname(os.path.abspath(__file__)) + '/driver/phantomjs_' + sys.platform
         self.driver = webdriver.PhantomJS(driverPath)
 
     def tearDown(self):

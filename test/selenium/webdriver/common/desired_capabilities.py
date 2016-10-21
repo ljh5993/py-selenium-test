@@ -124,7 +124,7 @@ class DesiredCapabilities(object):
     }
 
     PHANTOMJS = {
-        "browserName":"phantomjs_mac",
+        "browserName":"phantomjs_darwin",
         "version": "",
         "platform": "ANY",
         "javascriptEnabled": True,
