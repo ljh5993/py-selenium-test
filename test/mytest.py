@@ -37,6 +37,10 @@ class SiteTestCase(unittest.TestCase):
         self.assertTrue(self.existElement('input#email'))
         self.assertTrue(self.existElement('input#pass'))
 
+    
+    def test_ohter(selfs):
+        pass
+
 
 if __name__ == '__main__':
     unittest.main()
